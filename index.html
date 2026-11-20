@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Parrucchificio 79 · Listino prezzi">
+<meta property="og:description" content="Parrucchiere ed estetica a Cantù. Listino, promo e prenotazioni su WhatsApp.">
+<meta property="og:image" content="logo.jpg">
+<meta name="theme-color" content="#552C78">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Listino Parrucchificio 79</title>
+<meta name="description" content="Listino prezzi di Parrucchificio 79, parrucchiere ed estetica a Cantù (CO). Prenota su WhatsApp al 377 496 3094.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: colonna unica da telefono (link in bio), barra categorie fissa, righe servizio con puntini e prezzo come sul listino cartaceo */
+:root{
+  --bg:#FAF8F4; --surface:#FFFFFF; --fg:#22122E; --muted:#6B5D75; --line:#E5DEEA; --dots:#C9BED2;
+  --viola:#552C78; --viola-soft:#F0E9F5; --lime:#8DC63F; --lime-ink:#3D6A10; --lime-soft:#EEF6E2; --on:#FFFFFF;
+  --display:"Bebas Neue","Oswald","Arial Narrow",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#150D1B; --surface:#1F1528; --fg:#F4EEF7; --muted:#B7A9C2; --line:#352841; --dots:#4E3D5C;
+  --viola:#8A5AB5; --viola-soft:#2A1D36; --lime:#9ED45A; --lime-ink:#A9DC6C; --lime-soft:#22301A; --on:#FFFFFF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#150D1B; --surface:#1F1528; --fg:#F4EEF7; --muted:#B7A9C2; --line:#352841; --dots:#4E3D5C;
+  --viola:#8A5AB5; --viola-soft:#2A1D36; --lime:#9ED45A; --lime-ink:#A9DC6C; --lime-soft:#22301A; --on:#FFFFFF; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.in{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.03em;line-height:1;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+
+/* hero */
+.hero{padding-block:28px 22px;display:grid;justify-items:center;text-align:center;gap:12px}
+.logo{width:132px;height:132px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px var(--surface),0 0 0 6px var(--lime)}
+.logo img{width:100%;height:100%;border-radius:50%;display:block}
+.hero h1{font-size:clamp(40px,11vw,60px);color:var(--viola)}
+.hero h1 span{color:var(--lime-ink)}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.status{font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--dots)}
+.status.open{color:var(--lime-ink)}
+.status.open::before{background:var(--lime)}
+.hours{list-style:none;margin:0;padding:0;display:grid}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;font-variant-numeric:tabular-nums}
+.hours li .h{font-weight:600}
+.hours li.closed .h{color:var(--muted);font-weight:500}
+.hours li.today{background:var(--viola-soft)}
+.hours li.today .day::after{content:" · oggi";color:var(--lime-ink);font-weight:600}
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-top:6px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;font:600 15px var(--body);text-decoration:none;border:1.5px solid var(--viola);color:var(--viola);background:transparent;padding:0 16px;cursor:pointer}
+:root[data-theme="dark"] .btn{color:var(--fg)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:var(--fg)}}
+.btn.primary{background:var(--viola);color:var(--on);grid-column:1/-1}
+.btn:focus-visible,.nav a:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.btn svg{width:20px;height:20px;flex:none}
+.phone{font-size:14px;color:var(--muted)}
+.phone b{color:var(--fg);font-variant-numeric:tabular-nums;user-select:all}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .in{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.nav .in::-webkit-scrollbar{display:none}
+.nav a{flex:none;text-decoration:none;font-weight:600;font-size:14px;padding:10px 16px;border-radius:999px;background:var(--viola-soft);color:var(--fg)}
+.nav a.on{background:var(--viola);color:var(--on)}
+
+main{display:grid;gap:36px;padding-block:24px 40px}
+section{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 70px);display:grid;gap:16px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sec-head h2{font-size:40px;color:var(--viola)}
+:root[data-theme="dark"] .sec-head h2{color:var(--fg)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sec-head h2{color:var(--fg)}}
+.sec-head h2::after{content:"";display:block;height:5px;width:48px;background:var(--lime);border-radius:3px;margin-top:6px}
+.badge{font-size:12px;font-weight:600;color:var(--lime-ink);background:var(--lime-soft);padding:6px 10px;border-radius:999px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 18px}
+.card h3{font-size:22px;color:var(--muted);padding-top:14px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:flex;align-items:baseline;gap:8px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.list li:last-child{border-bottom:0}
+.list .n{min-width:0}
+.list .n small{display:block;color:var(--muted);font-size:13px}
+.list .d{flex:1;border-bottom:2px dotted var(--dots);transform:translateY(-4px);min-width:16px}
+.list .p{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.list .p em{font-style:normal;font-weight:500;color:var(--muted);font-size:13px;margin-right:3px}
+.note{font-size:14px;color:var(--muted)}
+.incl{background:var(--lime-soft);color:var(--fg);border-radius:12px;padding:12px 16px;font-size:14px}
+.incl b{color:var(--lime-ink)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.pack{background:var(--viola);color:var(--on);border-radius:16px;padding:18px;display:grid;gap:6px;align-content:start}
+.pack .t{font-family:var(--display);font-size:26px;letter-spacing:.03em}
+.pack .w{font-size:14px;opacity:.9}
+.pack .pr{font-family:var(--display);font-size:44px;color:var(--lime);line-height:1;margin-top:4px}
+.pack .pr small{font-family:var(--body);font-size:13px;color:var(--on);opacity:.85;margin-left:6px}
+.pack.light{background:var(--surface);color:var(--fg);border:1.5px solid var(--viola)}
+.pack.light .pr{color:var(--viola)}
+:root[data-theme="dark"] .pack.light .pr{color:var(--lime)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pack.light .pr{color:var(--lime)}}
+.pack.light .pr small{color:var(--muted);opacity:1}
+.pack .when{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.pack.light .when{color:var(--lime-ink)}
+
+.car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));scroll-padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.car::-webkit-scrollbar{display:none}
+.car:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.slide{flex:0 0 min(78%,320px);scroll-snap-align:start;min-height:200px}
+.slide.pack{align-content:space-between}
+.poster{display:block;border-radius:16px;overflow:hidden;line-height:0;background:var(--viola)}
+.poster img{width:100%;height:auto;display:block}
+.degu{display:grid;gap:6px;align-content:start;border-radius:16px;padding:18px;text-decoration:none;color:#3A1F12;background:linear-gradient(135deg,#F6EBCB 0%,#F7D3DD 55%,#E8CBB8 100%)}
+.degu .when{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A2E4A}
+.degu .t{font-family:var(--display);font-size:30px;letter-spacing:.03em;color:#3A1F12}
+.degu .w{font-size:14px}
+.degu .pr{font-family:var(--display);font-size:44px;line-height:1;color:#5A2A1A;margin-top:4px}
+.degu .pr small{font-family:var(--body);font-size:13px;margin-left:6px;color:#5A2A1A}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px}
+.chips .f1{background:#FFF7E0;color:#4A3A10}.chips .f2{background:#FBE3EA;color:#5A1428}.chips .f3{background:#5A3A2A;color:#FBEDE2}
+.dots{display:flex;justify-content:center;gap:6px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--dots);transition:width .2s}
+.dots i.on{width:20px;border-radius:4px;background:var(--viola)}
+.flav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.flav div{border-radius:12px;padding:10px;display:grid;justify-items:center;text-align:center;gap:2px;font-size:13px;line-height:1.3}
+.flav b{display:block;font-size:14px}
+.flav .ic{width:64px;height:64px}
+.f1{background:#F6EBCB;color:#4A3A10}.f2{background:#F7D3DD;color:#5A1428}.f3{background:#5A3A2A;color:#FBEDE2}
+@media (max-width:420px){.flav{grid-template-columns:1fr}}
+
+.info{display:grid;gap:12px}
+.info .row{display:flex;gap:12px;align-items:flex-start}
+.info svg{width:22px;height:22px;flex:none;color:var(--viola);margin-top:1px}
+:root[data-theme="dark"] .info svg{color:var(--lime)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .info svg{color:var(--lime)}}
+.social{display:flex;gap:10px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding-block:20px 32px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+
+</head>
+<body>
+<header class="hero in">
+  <div class="logo"><img src="logo.jpg" alt="Logo Parrucchificio 79, parrucchiere ed estetica"></div>
+  <div class="kicker">Parrucchiere &amp; Estetica · Cantù</div>
+  <h1>Parrucchificio <span>79</span></h1>
+  <p class="status" id="open-status">Lunedì e domenica chiuso</p>
+  <div class="cta">
+    <a class="btn primary" href="https://wa.me/393774963094?text=Ciao%2C%20vorrei%20prenotare%20un%20appuntamento" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1.2-.5-2.3-1.6-2.8-2.8l.9-1-1-2z"/></svg>
+      Prenota su WhatsApp</a>
+    <a class="btn" href="#info">Orari e contatti</a>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+da+Cermenate+34+Cant%C3%B9+CO" target="_blank" rel="noopener">Come arrivare</a>
+  </div>
+  <p class="phone">Tutto su appuntamento · <b>377 496 3094</b></p>
+</header>
+
+<nav class="nav" aria-label="Categorie">
+  <div class="in">
+    <a href="#promo">Promo</a>
+    <a href="#parrucchiere">Parrucchiere</a>
+    <a href="#estetica">Estetica</a>
+    <a href="#laser">Laser</a>
+    <a href="#massaggi">Massaggi</a>
+    <a href="#info">Info</a>
+  </div>
+</nav>
+
+<main class="in">
+
+  <section id="promo" aria-labelledby="h-promo">
+    <div class="sec-head"><h2 id="h-promo">Promo</h2><span class="note">Scorri →</span></div>
+    <div class="car" id="car" tabindex="0" aria-label="Promo in corso, scorri per vederle tutte">
+      <a class="slide poster" href="#massaggi"><img src="promo-degustazioni.jpg" alt="Degustazioni corpo, novembre mese delle coccole: massaggi personalizzati di un'ora alle fragranze Vanilla Cream, Strawberry Cheesecake e Chocolate Cookie. 1 massaggio 59 euro, 2 massaggi 109 euro, 3 massaggi 129 euro."></a>
+      <div class="slide poster"><img src="promo-mar-gio.jpg" alt="Promo della settimana, solo martedì e giovedì: taglio uomo per i pensionati 10 euro, mani semipermanente 20 euro, valida con una frequenza di tre settimane."></div>
+      <a class="slide poster" href="#laser"><img src="promo-laser.jpg" alt="Promo laser epilazione: inguine 35 euro a seduta, altre zone da 19 euro a zona."></a>
+      <a class="slide poster" href="#estetica"><img src="promo-ceretta.jpg" alt="Pacchetto ceretta completa 79 euro, su appuntamento."></a>
+    </div>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+  </section>
+
+  <section id="parrucchiere" aria-labelledby="h-parr">
+    <div class="sec-head"><h2 id="h-parr">Parrucchiere</h2></div>
+    <p class="incl">Ogni servizio è compreso di <b>shampoo, crema e fissaggio</b>.</p>
+    <div class="card">
+      <h3>Piega e taglio</h3>
+      <ul class="list">
+        <li><span class="n">Piega corta</span><span class="d"></span><span class="p">23€</span></li>
+        <li><span class="n">Piega media</span><span class="d"></span><span class="p">28€</span></li>
+        <li><span class="n">Piega lunga</span><span class="d"></span><span class="p">32€</span></li>
+        <li><span class="n">Taglio donna</span><span class="d"></span><span class="p">25€</span></li>
+        <li><span class="n">Taglio uomo</span><span class="d"></span><span class="p">25€</span></li>
+        <li><span class="n">Taglio bimbo</span><span class="d"></span><span class="p">22€</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Colore e schiariture</h3>
+      <ul class="list">
+        <li><span class="n">Colore di base <small>ricrescita</small></span><span class="d"></span><span class="p">38€</span></li>
+        <li><span class="n">Colore completo</span><span class="d"></span><span class="p">50€</span></li>
+        <li><span class="n">Tonalizzante / gloss</span><span class="d"></span><span class="p">30€</span></li>
+        <li><span class="n">Colpi di sole / meches</span><span class="d"></span><span class="p"><em>da</em>70€</span></li>
+        <li><span class="n">Balayage</span><span class="d"></span><span class="p"><em>da</em>110€</span></li>
+        <li><span class="n">Colpi di sole parziali</span><span class="d"></span><span class="p">3€ <em>a cartina</em></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Trattamenti e acconciature</h3>
+      <ul class="list">
+        <li><span class="n">Permanente</span><span class="d"></span><span class="p"><em>da</em>45€</span></li>
+        <li><span class="n">Trattamento ristrutturante</span><span class="d"></span><span class="p">25€ / 30€</span></li>
+        <li><span class="n">Stiratura</span><span class="d"></span><span class="p"><em>da</em>75€</span></li>
+        <li><span class="n">Acconciature</span><span class="d"></span><span class="p"><em>da</em>40€</span></li>
+      </ul>
+    </div>
+    <h3 style="font-size:26px">I nostri pacchetti colore</h3>
+    <div class="grid2">
+      <div class="pack">
+        <div class="t">Colore</div>
+        <div class="w">Colore + trattamento + piega</div>
+        <div class="pr">69€</div>
+      </div>
+      <div class="pack">
+        <div class="t">Blondi</div>
+        <div class="w">Schiaritura / balayage + gloss + trattamento + piega</div>
+        <div class="pr">149€</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="estetica" aria-labelledby="h-est">
+    <div class="sec-head"><h2 id="h-est">Estetica</h2></div>
+    <div class="card">
+      <h3>Pedicure</h3>
+      <ul class="list">
+        <li><span class="n">Pedicure estetico senza smalto</span><span class="d"></span><span class="p">28€</span></li>
+        <li><span class="n">Pedicure estetico con smalto</span><span class="d"></span><span class="p">30€</span></li>
+        <li><span class="n">Pedicure estetico con semipermanente</span><span class="d"></span><span class="p">42€</span></li>
+        <li><span class="n">Pedicure curativo senza smalto</span><span class="d"></span><span class="p">45€</span></li>
+        <li><span class="n">Pedicure curativo con smalto</span><span class="d"></span><span class="p">50€</span></li>
+        <li><span class="n">Pedicure curativo con semipermanente</span><span class="d"></span><span class="p">55€</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Mani</h3>
+      <ul class="list">
+        <li><span class="n">Mani senza smalto</span><span class="d"></span><span class="p">25€</span></li>
+        <li><span class="n">Mani smalto normale</span><span class="d"></span><span class="p">28€</span></li>
+        <li><span class="n">Mani semipermanente</span><span class="d"></span><span class="p">35€</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Ceretta</h3>
+      <ul class="list">
+        <li><span class="n">Gamba intera</span><span class="d"></span><span class="p">37€</span></li>
+        <li><span class="n">Mezza gamba</span><span class="d"></span><span class="p">30€</span></li>
+        <li><span class="n">Braccia / spalle</span><span class="d"></span><span class="p">27€</span></li>
+        <li><span class="n">Ascelle</span><span class="d"></span><span class="p">17€</span></li>
+        <li><span class="n">Inguine</span><span class="d"></span><span class="p">17€</span></li>
+        <li><span class="n">Baffetti</span><span class="d"></span><span class="p">5€</span></li>
+        <li><span class="n">Mento</span><span class="d"></span><span class="p">5€</span></li>
+        <li><span class="n">Sopracciglia</span><span class="d"></span><span class="p">8€</span></li>
+        <li><span class="n">Pacchetto ceretta completa</span><span class="d"></span><span class="p">79€</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Viso</h3>
+      <ul class="list">
+        <li><span class="n">Pulizia del viso</span><span class="d"></span><span class="p"><em>da</em>60€</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="laser" aria-labelledby="h-laser">
+    <div class="sec-head"><h2 id="h-laser">Laser epilazione</h2></div>
+    <div class="grid2">
+      <div class="pack">
+        <div class="t">Laser epilazione</div>
+        <div class="w">Prezzo per zona trattata</div>
+        <div class="pr">da 19€<small>a zona</small></div>
+      </div>
+      <div class="pack light">
+        <div class="when">Promo</div>
+        <div class="t">Laser inguine</div>
+        <div class="pr">35€<small>a seduta</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="massaggi" aria-labelledby="h-mass">
+    <div class="sec-head"><h2 id="h-mass">Massaggi</h2></div>
+    <div class="card">
+      <h3>Massaggi personalizzati</h3>
+      <ul class="list">
+        <li><span class="n">Mezz'ora <small>30 minuti</small></span><span class="d"></span><span class="p">40€</span></li>
+        <li><span class="n">Un'ora <small>60 minuti</small></span><span class="d"></span><span class="p">60€</span></li>
+      </ul>
+      <p class="note" style="padding-bottom:14px">Il massaggio è personalizzato in base alla persona.</p>
+    </div>
+    <div class="card" style="padding-bottom:18px;display:grid;gap:12px">
+      <div class="sec-head" style="padding-top:14px"><h3 style="padding:0;color:var(--fg);font-size:28px">Degustazioni corpo</h3><span class="badge">Novembre, mese delle coccole</span></div>
+      <p class="note">Massaggi personalizzati di un'ora, con un momento di degustazione della fragranza scelta.</p>
+      <div class="flav">
+        <div class="f1"><svg class="ic" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M10 100 Q58 78 112 30" stroke="#3E2615" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M14 110 Q64 92 114 48" stroke="#5A3820" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M20 98 Q55 84 96 52" stroke="#7A5232" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".7"/>
+<path d="M34 86 C24 74 26 60 38 56 C40 70 38 78 34 86Z" fill="#7FB04A"/>
+<ellipse cx="60" cy="38" rx="13" ry="21" transform="rotate(0 60 58)" fill="#FFFDF6" stroke="#E3CF96" stroke-width="2"/><ellipse cx="60" cy="38" rx="13" ry="21" transform="rotate(72 60 58)" fill="#FFFDF6" stroke="#E3CF96" stroke-width="2"/><ellipse cx="60" cy="38" rx="13" ry="21" transform="rotate(144 60 58)" fill="#FFFDF6" stroke="#E3CF96" stroke-width="2"/><ellipse cx="60" cy="38" rx="13" ry="21" transform="rotate(216 60 58)" fill="#FFFDF6" stroke="#E3CF96" stroke-width="2"/><ellipse cx="60" cy="38" rx="13" ry="21" transform="rotate(288 60 58)" fill="#FFFDF6" stroke="#E3CF96" stroke-width="2"/>
+<circle cx="60" cy="58" r="9" fill="#F2C14E"/><circle cx="60" cy="58" r="4" fill="#E39B2D"/>
+</svg><b>Vanilla Cream</b>Relax totale</div>
+        <div class="f2"><svg class="ic" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M14 84 L104 94 L104 104 L14 94 Z" fill="#B97A42"/>
+<path d="M14 84 L104 94 L104 104 L14 94 Z" fill="none" stroke="#9A6233" stroke-width="1.5"/>
+<path d="M14 58 L104 68 L104 94 L14 84 Z" fill="#FFF4DF"/>
+<path d="M14 58 L62 44 L104 68 Z" fill="#D9263F"/>
+<path d="M14 58 L104 68 L104 76 C98 76 98 84 92 84 C88 84 88 74 82 74 C76 74 78 80 72 80 C66 80 66 71 58 71 C52 71 52 78 46 78 C40 78 42 68 34 68 C28 68 28 74 22 74 C18 74 18 66 14 66 Z" fill="#E0354E"/>
+<path d="M20 60 L60 49" stroke="#FF8A9C" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+<path d="M60 52 C46 46 46 26 60 24 C74 26 74 46 60 52Z" fill="#E8243C"/>
+<path d="M60 24 L52 18 L58 21 L60 14 L62 21 L68 18 Z" fill="#4E9A2E" stroke="#3C7D22" stroke-width="1" stroke-linejoin="round"/>
+<ellipse cx="54" cy="33" rx="1.1" ry="1.8" fill="#FFE08A"/><ellipse cx="60" cy="30" rx="1.1" ry="1.8" fill="#FFE08A"/><ellipse cx="66" cy="33" rx="1.1" ry="1.8" fill="#FFE08A"/><ellipse cx="56" cy="39" rx="1.1" ry="1.8" fill="#FFE08A"/><ellipse cx="63" cy="39" rx="1.1" ry="1.8" fill="#FFE08A"/><ellipse cx="60" cy="45" rx="1.1" ry="1.8" fill="#FFE08A"/>
+</svg><b>Strawberry Cheesecake</b>Energia e vitalità</div>
+        <div class="f3"><svg class="ic" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g transform="rotate(-14 26 92)"><rect x="8" y="78" width="34" height="26" rx="3" fill="#2E1A0F"/><rect x="11" y="81" width="13" height="9" rx="1.5" fill="#4A2C1B"/><rect x="26" y="81" width="13" height="9" rx="1.5" fill="#4A2C1B"/><rect x="11" y="92" width="13" height="9" rx="1.5" fill="#4A2C1B"/><rect x="26" y="92" width="13" height="9" rx="1.5" fill="#4A2C1B"/></g>
+<circle cx="62" cy="59" r="41" fill="#D49A5C"/><circle cx="62" cy="59" r="41" fill="none" stroke="#B57A40" stroke-width="2.5"/>
+<path d="M62 24 C83 24 98 40 98 60 C98 64 97 68 95 72" stroke="#E8B97E" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>
+<path d="M39.190418087917095 44 Q39.190418087917095 39.190418087917095 44 38.7094598967088 Q48.809581912082905 39.190418087917095 49.05006100768705 44.96191638241658 Q46.88574914724974 48.809581912082905 43.03808361758342 48.32862372087462 Q38.7094598967088 46.88574914724974 39.190418087917095 44Z" fill="#3A2214"/><path d="M61.622877065188746 38 Q61.622877065188746 33.622877065188746 66 33.18516477170762 Q70.37712293481125 33.622877065188746 70.59597908155182 38.875424586962254 Q68.62627376088675 42.377122934811254 65.12457541303775 41.93941064133013 Q61.18516477170762 40.626273760886754 61.622877065188746 38Z" fill="#3A2214"/><path d="M74.37266381740037 58 Q74.37266381740037 52.372663817400365 80 51.8099301991404 Q85.62733618259963 52.372663817400365 85.90870299172961 59.125467236519924 Q83.37640170955979 63.627336182599635 78.87453276348008 63.06460256433967 Q73.8099301991404 61.37640170955978 74.37266381740037 58Z" fill="#3A2214"/><path d="M51.818909283331145 62 Q51.818909283331145 57.818909283331145 56 57.400800211664254 Q60.181090716668855 57.818909283331145 60.3901452525023 62.836218143333774 Q58.508654430001314 66.18109071666886 55.163781856666226 65.76298164500197 Q51.400800211664254 64.50865443000131 51.818909283331145 62Z" fill="#3A2214"/><path d="M34.66029498923328 72 Q34.66029498923328 66.66029498923328 40 66.1263244881566 Q45.33970501076672 66.66029498923328 45.60669026130506 73.06794100215335 Q43.203823006460034 77.33970501076672 38.93205899784665 76.80573450969005 Q34.126324488156605 75.20382300646003 34.66029498923328 72Z" fill="#3A2214"/><path d="M61.085777707718535 80 Q61.085777707718535 75.08577770771853 66 74.59435547849039 Q70.91422229228147 75.08577770771853 71.15993340689553 80.9828444584563 Q68.94853337536888 84.91422229228147 65.0171555415437 84.42280006305332 Q60.59435547849039 82.94853337536888 61.085777707718535 80Z" fill="#3A2214"/><path d="M79.85500268806324 76 Q79.85500268806324 71.85500268806324 84 71.44050295686955 Q88.14499731193676 71.85500268806324 88.3522471775336 76.82899946238736 Q86.48699838716206 80.14499731193676 83.17100053761264 79.73049758074309 Q79.44050295686955 78.48699838716206 79.85500268806324 76Z" fill="#3A2214"/><path d="M46.73141066702645 50 Q46.73141066702645 44.73141066702645 52 44.20455173372909 Q57.26858933297355 44.73141066702645 57.53201879962223 51.05371786659471 Q55.16115359978413 55.26858933297355 50.94628213340529 54.74173039967619 Q46.20455173372909 53.16115359978413 46.73141066702645 50Z" fill="#3A2214"/>
+<circle cx="36" cy="54" r="1.5" fill="#B57A40"/><circle cx="74" cy="66" r="1.5" fill="#B57A40"/><circle cx="50" cy="86" r="1.5" fill="#B57A40"/>
+</svg><b>Chocolate Cookie</b>Tono e benessere</div>
+      </div>
+      <ul class="list">
+        <li><span class="n">1 massaggio da 1 ora</span><span class="d"></span><span class="p">59€</span></li>
+        <li><span class="n">2 massaggi da 1 ora</span><span class="d"></span><span class="p">109€</span></li>
+        <li><span class="n">3 massaggi da 1 ora</span><span class="d"></span><span class="p">129€</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="info" aria-labelledby="h-info">
+    <div class="sec-head"><h2 id="h-info">Prenota</h2></div>
+    <div class="card" style="padding:8px 8px 10px">
+      <h3 style="padding:12px 12px 6px">Orari</h3>
+      <ul class="hours" id="hours">
+        <li class="closed" data-d="1"><span class="day">Lunedì</span><span class="h">Chiuso</span></li>
+        <li data-d="2" data-o="10:00" data-c="19:00"><span class="day">Martedì</span><span class="h">10:00 – 19:00</span></li>
+        <li data-d="3" data-o="14:00" data-c="21:00"><span class="day">Mercoledì</span><span class="h">14:00 – 21:00</span></li>
+        <li data-d="4" data-o="09:00" data-c="18:00"><span class="day">Giovedì</span><span class="h">9:00 – 18:00</span></li>
+        <li data-d="5" data-o="10:00" data-c="19:00"><span class="day">Venerdì</span><span class="h">10:00 – 19:00</span></li>
+        <li data-d="6" data-o="08:00" data-c="17:00"><span class="day">Sabato</span><span class="h">8:00 – 17:00</span></li>
+        <li class="closed" data-d="0"><span class="day">Domenica</span><span class="h">Chiuso</span></li>
+      </ul>
+    </div>
+    <div class="card info" style="padding:18px">
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 14l2.5 2.5L16 12"/></svg>
+        <p><b>Tutto su appuntamento</b>, per offrirti il massimo della qualità e il giusto tempo dedicato.</p>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+        <p>Telefono e WhatsApp: <b style="user-select:all;font-variant-numeric:tabular-nums">377 496 3094</b></p>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <p>Via Giovanni da Cermenate 34<br>22063 Cantù (CO)</p>
+      </div>
+      <a class="btn primary" href="https://wa.me/393774963094?text=Ciao%2C%20vorrei%20prenotare%20un%20appuntamento" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+      <div class="social">
+        <a class="btn" style="flex:1" href="https://www.instagram.com/parrucchificio79/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" style="flex:1" href="https://www.google.com/maps/search/?api=1&query=Via+Giovanni+da+Cermenate+34+Cant%C3%B9+CO" target="_blank" rel="noopener">Mappa</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="in">Parrucchificio 79 · Parrucchiere &amp; Estetica · Cantù (CO)<br>Prezzi in euro. Le promo valgono su appuntamento.</div></footer>
+
+<script>
+(function(){
+  const links=[...document.querySelectorAll('.nav a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  function upd(){
+    let cur=0; const y=window.scrollY+120;
+    secs.forEach((s,i)=>{ if(s && s.offsetTop<=y) cur=i; });
+    links.forEach((a,i)=>a.classList.toggle('on',i===cur));
+    const on=links[cur]; if(on){const bar=on.parentElement; const l=on.offsetLeft-16; if(l<bar.scrollLeft||l+on.offsetWidth>bar.scrollLeft+bar.clientWidth) bar.scrollTo({left:l,behavior:'smooth'});}
+  }
+  window.addEventListener('scroll',upd,{passive:true}); upd();
+})();
+(function(){
+  const car=document.getElementById('car'), dots=document.getElementById('dots');
+  if(!car) return;
+  const slides=[...car.children];
+  slides.forEach(()=>dots.appendChild(document.createElement('i')));
+  const cur=()=>{let best=0,bd=1e9;slides.forEach((s,i)=>{const d=Math.abs(s.offsetLeft-car.offsetLeft-car.scrollLeft-parseFloat(getComputedStyle(car).paddingLeft));if(d<bd){bd=d;best=i}});return best};
+  const paint=()=>{const c=cur();[...dots.children].forEach((d,i)=>d.classList.toggle('on',i===c))};
+  car.addEventListener('scroll',()=>requestAnimationFrame(paint),{passive:true}); paint();
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let paused=false, t;
+  const stop=()=>{paused=true;clearInterval(t)};
+  ['pointerdown','touchstart','wheel','focusin','keydown'].forEach(e=>car.addEventListener(e,stop,{passive:true}));
+  if(!reduce){t=setInterval(()=>{if(paused||document.hidden)return;const n=(cur()+1)%slides.length;car.scrollTo({left:slides[n].offsetLeft-slides[0].offsetLeft,behavior:'smooth'})},4500)}
+})();
+(function(){
+  try{
+    const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    const g=t=>parts.find(p=>p.type===t).value;
+    const d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday'));
+    const now=(+g('hour')%24)*60+(+g('minute'));
+    const m=s=>{const [h,mi]=s.split(':');return h*60+ +mi};
+    const rows=[...document.querySelectorAll('#hours li')];
+    const today=rows.find(r=>+r.dataset.d===d); if(today) today.classList.add('today');
+    const st=document.getElementById('open-status');
+    const nice=s=>s.replace(/^0/,'');
+    if(today && today.dataset.o && now>=m(today.dataset.o) && now<m(today.dataset.c)){
+      st.textContent='Aperto ora · chiude alle '+nice(today.dataset.c); st.classList.add('open');
+    } else {
+      let msg='Chiuso ora';
+      for(let i=0;i<8;i++){
+        const dd=(d+i)%7, r=rows.find(x=>+x.dataset.d===dd);
+        if(!r||!r.dataset.o) continue;
+        if(i===0 && now>=m(r.dataset.o)) continue;
+        const when=i===0?'oggi':i===1?'domani':r.querySelector('.day').textContent.toLowerCase();
+        msg+=' · riapre '+when+' alle '+nice(r.dataset.o); break;
+      }
+      st.textContent=msg;
+    }
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
